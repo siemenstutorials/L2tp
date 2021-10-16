@@ -83,8 +83,11 @@ check_creds() {
   if [ -z "$VPN_IPSEC_PSK" ] && [ -z "$VPN_USER" ] && [ -z "$VPN_PASSWORD" ]; then
     bigecho "VPN credentials not set by user. Generating random PSK and password..."
     VPN_IPSEC_PSK=$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' </dev/urandom 2>/dev/null | head -c 20)
-    VPN_USER=vpnuser
+    read -p "请设置L2tp用户名：" VPN_USER
+    VPN_USER=${vpnuser}
     VPN_PASSWORD=$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' </dev/urandom 2>/dev/null | head -c 16)
+    read -p "请设置L2tp密码：" VPN_PASSWORD
+    VPN_PASSWORD=${VPN_PASSWORD}
   fi
 
   if [ -z "$VPN_IPSEC_PSK" ] || [ -z "$VPN_USER" ] || [ -z "$VPN_PASSWORD" ]; then
