@@ -594,6 +594,7 @@ finish() {
   check_swan_ver "$1" "$2"
   exit "$1"
 }
+
 install_iptables() {
 yum install -y iptables
 yum install -y iptables-services
@@ -604,6 +605,12 @@ iptables -Z
 service iptables save
 systemctl restart iptables
 }
+
+auto_restart() {
+systemctl enable ipsec
+systemctl enable xl2tpd
+}
+
 vpnsetup() {
   check_root
   check_vz
@@ -629,6 +636,7 @@ vpnsetup() {
   enable_on_boot
   start_services
   install_iptables
+  auto_restart
   show_vpn_info
 }
 
