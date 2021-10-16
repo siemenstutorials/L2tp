@@ -636,8 +636,3 @@ vpnsetup() {
 vpnsetup "$@"
 
 exit 0
-
-
-
-
-
