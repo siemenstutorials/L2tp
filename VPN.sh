@@ -30,9 +30,18 @@ sed -i '1c "${user}" l2tpd "${pwd}" *' /etc/ppp/chap-secrets
 systemctl restart ipsec xl2tpd
 
 #xl2tp login config
-echo "Server IP: "$public_ip
-echo "Username: " $user
-echo "Password: " $pwd
-echo "IPsec PSK: "$VPN_IPSEC_PSK
+echo "Username: " ${user}
+echo "Password: " ${pwd}
+
+cat <<EOF
+================================================
+IPsec VPN server is now ready for use!
+Connect to your new VPN with these details:
+Server IP: $public_ip
+IPsec PSK: $VPN_IPSEC_PSK
+Username: ${user}
+Password: ${pwd}
+================================================
+EOF
 
 
