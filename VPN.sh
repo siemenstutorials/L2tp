@@ -3,12 +3,11 @@
 # Important notes:   https://git.io/vpnnotes
 # Setup VPN clients: https://git.io/vpnclients
 # IKEv2 guide:       https://git.io/ikev2
+#
 # =====================================================
-
 YOUR_IPSEC_PSK=''
 YOUR_USERNAME=''
 YOUR_PASSWORD=''
-
 # =====================================================
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
@@ -542,10 +541,7 @@ cat <<EOF
 ================================================
 VPN Connect details:
 
-Server IP: $public_ip
-IPsec PSK: $VPN_IPSEC_PSK
-Username: $VPN_USER
-Password: $VPN_PASSWORD
+Server IP: $public_ip | Username: $VPN_USER | Password: $VPN_PASSWORD | IPsec PSK: $VPN_IPSEC_PSK
 
 ================================================
 
