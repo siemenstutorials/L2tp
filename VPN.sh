@@ -583,6 +583,7 @@ systemctl restart iptables
 auto_restart() {
 systemctl enable ipsec
 systemctl enable xl2tpd
+systemctl restart ipsec xl2tpd
 }
 
 vpnsetup() {
