@@ -26,8 +26,7 @@ systemctl enable xl2tpd
 #set password
 read -p "请设置L2tp用户名：" user
 read -p "请设置L2tp密码：" pwd
-
-sed -i '1c "$user" l2tpd "$pwd" *' /etc/ppp/chap-secrets
+sed -i '1c "${user}" l2tpd "${pwd}" *' /etc/ppp/chap-secrets
 systemctl restart ipsec xl2tpd
 
 #xl2tp login config
