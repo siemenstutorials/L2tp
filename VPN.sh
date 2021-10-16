@@ -590,6 +590,7 @@ vpnsetup() {
   check_vz
   check_os
   check_iface
+  check_creds
   check_dns
   start_setup
   install_setup_pkgs
@@ -610,7 +611,6 @@ vpnsetup() {
   start_services
   install_iptables
   auto_restart
-  check_creds
   show_vpn_info
 }
 
