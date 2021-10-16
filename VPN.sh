@@ -26,24 +26,8 @@ systemctl restart iptables
 systemctl enable ipsec
 systemctl enable xl2tpd
 #set password
-read -p "请设置L2tp用户名：" user
-read -p "请设置L2tp密码：" pwd
-sed -i '1c "${user}" l2tpd "${pwd}" *' /etc/ppp/chap-secrets
+read -p "请设置L2tp用户名：" VPN_USER
+read -p "请设置L2tp密码：" VPN_PASSWORD
+sed -i '1c "$VPN_USER" l2tpd "$VPN_PASSWORD" *' /etc/ppp/chap-secrets
 systemctl restart ipsec xl2tpd
-
-#xl2tp login config
-echo "Username: " ${user}
-echo "Password: " ${pwd}
-
-cat <<EOF
-================================================
-IPsec VPN server is now ready for use!
-Connect to your new VPN with these details:
-Server IP: $public_ip
-IPsec PSK: $VPN_IPSEC_PSK
-Username: ${user}
-Password: ${pwd}
-================================================
-EOF
-
 
