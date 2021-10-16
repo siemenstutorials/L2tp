@@ -9,7 +9,9 @@
 #                                                            #
 ##############################################################
 #download vpn.sh
-wget -N --no-check-certificate https://raw.githubusercontent.com/siemenstutorials/L2tp/master/vpnsetup_centos.sh && chmod +x vpnsetup_centos.sh && ./vpnsetup_centos.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/siemenstutorials/L2tp/master/vpnsetup_centos.sh
+chmod +x vpnsetup_centos.sh
+./vpnsetup_centos.sh
 
 #iptables 
 yum install -y iptables
