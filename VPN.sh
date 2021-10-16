@@ -78,7 +78,7 @@ check_iface() {
 check_creds() {
 read -p "请设置L2tp用户名：" VPN_USER
 read -p "请设置L2tp密码：" VPN_PASSWORD
-read -p "请设置L2tp密码：" VPN_IPSEC_PSK
+read -p "请设置IPsec PSK密码：" VPN_IPSEC_PSK
 }
 
 check_dns() {
