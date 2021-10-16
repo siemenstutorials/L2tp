@@ -561,8 +561,7 @@ show_vpn_info() {
 cat <<EOF
 
 ================================================
-
-Connect to your new VPN with these details:
+VPN Connect details:
 
 Server IP: $public_ip
 IPsec PSK: $VPN_IPSEC_PSK
@@ -642,5 +641,4 @@ vpnsetup() {
 
 ## Defer setup until we have the complete script
 vpnsetup "$@"
-
 exit 0
