@@ -201,12 +201,7 @@ check_libreswan() {
 }
 
 get_libreswan() {
-  if ! check_libreswan; then
-    bigecho "Downloading Libreswan..."
-   
     wget https://github.com/siemenstutorials/L2tp/releases/download/v1/libreswan-4.5.tar.gz
-
-|| exit 1
     /bin/rm -rf "/opt/src/libreswan-4.5.tar.gz"
     tar xzf "$swan_file" && /bin/rm -f "libreswan-4.5.tar.gz"
   else
